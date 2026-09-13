@@ -1,0 +1,7 @@
+import {
+  "ago3x/moonledger" @lib,
+  "moonbitlang/core/json",
+  "moonbitlang/core/env",
+}
+
+pkgtype(kind: "executable")
