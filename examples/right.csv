@@ -1,0 +1,7 @@
+note,id,amount
+"multi
+line",F,6.00
+unchanged,A,+12.34
+amount changed,B,100.00
+duplicate one,D,3
+right only,E,7

@@ -1,0 +1,8 @@
+id,amount,note
+A,12.3400,unchanged
+B,99.99,amount changed
+C,5,left only
+D,3,duplicate one
+D,4,duplicate two
+F,6,"multi
+line"
