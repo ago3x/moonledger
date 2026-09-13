@@ -1,0 +1,129 @@
+{
+  "schema": "moonledger.report/1",
+  "status": "differences",
+  "key_column": "id",
+  "amount_columns": [
+    "amount"
+  ],
+  "counts": {
+    "left_rows": 6,
+    "right_rows": 5,
+    "equal_keys": 2,
+    "changed_keys": 1,
+    "left_only_keys": 1,
+    "right_only_keys": 1,
+    "duplicate_keys": 1
+  },
+  "differences": [
+    {
+      "kind": "changed",
+      "key": "B",
+      "left": [
+        {
+          "file": "examples/left.csv",
+          "record": 3,
+          "line": 3,
+          "values": {
+            "id": "B",
+            "amount": "99.99",
+            "note": "amount changed"
+          }
+        }
+      ],
+      "right": [
+        {
+          "file": "examples/right.csv",
+          "record": 4,
+          "line": 5,
+          "values": {
+            "note": "amount changed",
+            "id": "B",
+            "amount": "100.00"
+          }
+        }
+      ],
+      "fields": [
+        {
+          "column": "amount",
+          "left": "99.99",
+          "right": "100.00"
+        }
+      ]
+    },
+    {
+      "kind": "left_only",
+      "key": "C",
+      "left": [
+        {
+          "file": "examples/left.csv",
+          "record": 4,
+          "line": 4,
+          "values": {
+            "id": "C",
+            "amount": "5",
+            "note": "left only"
+          }
+        }
+      ],
+      "right": [],
+      "fields": []
+    },
+    {
+      "kind": "duplicate",
+      "key": "D",
+      "left": [
+        {
+          "file": "examples/left.csv",
+          "record": 5,
+          "line": 5,
+          "values": {
+            "id": "D",
+            "amount": "3",
+            "note": "duplicate one"
+          }
+        },
+        {
+          "file": "examples/left.csv",
+          "record": 6,
+          "line": 6,
+          "values": {
+            "id": "D",
+            "amount": "4",
+            "note": "duplicate two"
+          }
+        }
+      ],
+      "right": [
+        {
+          "file": "examples/right.csv",
+          "record": 5,
+          "line": 6,
+          "values": {
+            "note": "duplicate one",
+            "id": "D",
+            "amount": "3"
+          }
+        }
+      ],
+      "fields": []
+    },
+    {
+      "kind": "right_only",
+      "key": "E",
+      "left": [],
+      "right": [
+        {
+          "file": "examples/right.csv",
+          "record": 6,
+          "line": 7,
+          "values": {
+            "note": "right only",
+            "id": "E",
+            "amount": "7"
+          }
+        }
+      ],
+      "fields": []
+    }
+  ]
+}

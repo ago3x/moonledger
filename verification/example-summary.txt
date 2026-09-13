@@ -1,0 +1,1 @@
+equal=2 changed=1 left_only=1 right_only=1 duplicate_groups=1
