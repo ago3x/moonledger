@@ -1,0 +1,74 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "ago3x/moonledger"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn canonical_decimal(String) -> String?
+
+pub fn parse_csv(String, String) -> Result[Array[CsvRecord], LedgerError]
+
+pub fn reconcile(String, String, String, String, String, Array[String]) -> Result[Report, LedgerError]
+
+// Errors
+
+// Types and methods
+pub(all) struct Counts {
+  left_rows : Int
+  right_rows : Int
+  equal_keys : Int
+  changed_keys : Int
+  left_only_keys : Int
+  right_only_keys : Int
+  duplicate_keys : Int
+} derive(Eq, ToJson, @debug.Debug)
+
+pub(all) struct CsvRecord {
+  record : Int
+  line : Int
+  values : Array[String]
+} derive(Eq, ToJson, @debug.Debug)
+
+pub(all) struct Difference {
+  kind : String
+  key : String
+  left : Array[SourceRow]
+  right : Array[SourceRow]
+  fields : Array[FieldDelta]
+} derive(Eq, ToJson, @debug.Debug)
+
+pub(all) struct FieldDelta {
+  column : String
+  left : String
+  right : String
+} derive(Eq, ToJson, @debug.Debug)
+
+pub(all) struct LedgerError {
+  code : String
+  file : String
+  record : Int
+  line : Int
+  message : String
+} derive(Eq, ToJson, @debug.Debug)
+
+pub(all) struct Report {
+  schema : String
+  status : String
+  key_column : String
+  amount_columns : Array[String]
+  counts : Counts
+  differences : Array[Difference]
+} derive(Eq, ToJson, @debug.Debug)
+
+pub(all) struct SourceRow {
+  file : String
+  record : Int
+  line : Int
+  values : Map[String, String]
+} derive(Eq, ToJson, @debug.Debug)
+
+// Type aliases
+
+// Traits
